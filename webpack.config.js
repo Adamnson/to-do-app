@@ -1,6 +1,7 @@
 // webpack.config.js
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { library } = require("webpack");
 
 module.exports = {
   mode: "development",
@@ -8,6 +9,7 @@ module.exports = {
   output: {
     filename: "main.js",
     path: path.resolve(__dirname, "dist"),
+    library: "lib",
     clean: true,
   },
   devtool: "eval-source-map",
