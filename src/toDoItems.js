@@ -1,19 +1,24 @@
-export function ToDoItem(title, desc, dueDate, prio){
+export function ToDoItem(item_title, desc, due_date, prio){
   if (!new.target) {
     throw Error("You must use the 'new' operator to initialize a new task!");
   }
-  this.title = title;
-  this.description = desc;
-  this.dueDate = dueDate;
-  this.prio = prio;
-  
-  function show (){
-    console.log(title);
-    console.log(desc);
-    console.log(dueDate);
-    console.log(prio);
+
+  function title(){
+    return item_title;
+  }
+
+  function description(){
+    return desc;
+  }
+
+  function dueDate(){
+    return due_date;
+  }
+
+  function priority(){
+    return prio;
   }
   
-  return {show}
+  return {title, description, dueDate, priority}
 }
 

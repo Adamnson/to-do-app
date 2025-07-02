@@ -7,7 +7,21 @@ function Project(name){
   let list = [];
   
   function addTask(task){
-    list.push(task)
+    let flag = false;
+
+    for(let i = 0; i < list.length; i++){
+      if ( list[i].title() === task.title()){
+        flag = true;
+        break;
+      } 
+    }
+
+    if(!flag){
+      list.push(task)
+    }
+    else {
+      throw Error(`The task with  title '${task.title()}' exists!` )
+    }
   }
 
   function getTasks(){
@@ -18,13 +32,11 @@ function Project(name){
     return name;
   }
 
-  return {getName, addTask, getTasks}
+  function numberOfTasks(){
+    return list.length;
+  }
+
+  return {getName, addTask, getTasks, numberOfTasks}
 }
 
-function createTaskListDOM(project){
-  let heading = document.createElement("h2");
-  heading.innerHTML = project.getName()
-  return heading
-}
-
-export  {Project, createTaskListDOM}
+export {Project}

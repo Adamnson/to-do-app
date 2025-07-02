@@ -1,7 +1,7 @@
-import "./navbar.css"
 import nav from "./navbar"
-import {Project, createTaskListDOM} from "./project.js"
+import {Project} from "./project.js"
 import {ToDoItem} from "./toDoItems.js"
+import {createTaskListDOM} from "./task_list_display.js"
 
 console.log(nav["nav"])
 document.querySelector("body").appendChild(nav["nav"])
@@ -18,8 +18,9 @@ let job = new ToDoItem("get a job", "find a company, an open position, and apply
 p1.addTask(item1);
 p1.addTask(job);
 
-(p1.getTasks()).forEach(task => {
-  task.show()
-})
+// (p1.getTasks()).forEach(task => {
+//   console.log(task.priority())
+// })
 
-document.querySelector("body").appendChild(createTaskListDOM(p1))
+let tl = createTaskListDOM(p1);
+document.querySelector("body").appendChild(tl);

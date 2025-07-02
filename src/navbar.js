@@ -1,3 +1,5 @@
+import "./navbar.css"
+
 let nav = document.createElement('nav');
 
 let home_button = document.createElement('button');
