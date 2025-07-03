@@ -28,6 +28,21 @@
   padding-inline: 0.25rem;
 }
 
+.new-task {
+  /* height: 100%; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0.5rem dashed grey;
+  background-color: black;
+  font-size: 1rem;
+  scale: 0.9;
+  &:hover{
+    scale: 1;
+    font-size: 1.2rem;
+  }
+}
+
 @media (max-width: 580px) {
   .task-list{
     display: grid;
