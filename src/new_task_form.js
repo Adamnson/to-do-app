@@ -1,5 +1,5 @@
 
-function createInputForm(){
+function createNewTaskForm(){
 
   let form_dialog = document.createElement('dialog');
   form_dialog.setAttribute('id', "form-dialog");
@@ -37,4 +37,4 @@ function createFormFields(input, label){
   return form_field_div;
 }
 
-export {createInputForm}
+export {createNewTaskForm}

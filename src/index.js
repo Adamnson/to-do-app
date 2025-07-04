@@ -36,5 +36,5 @@ function preFunction(){
   let date = document.getElementById("date").value
   let prio = document.getElementById("priority").value
   p1.addTask(createTask({title, desc, date, prio}));
-  document.querySelector("body").appendChild(createTaskListDOM(p1));
+  document.querySelector("body").appendChild(createTaskListDOM(portfolio));
 }

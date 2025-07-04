@@ -1,4 +1,4 @@
-import { createInputForm } from "./new_task_form";
+import { createNewTaskForm } from "./new_task_form";
 
 function createCardsForTasks(project){
   let task_list_div = document.createElement("div");
@@ -41,7 +41,7 @@ function createBlankTask () {
   content_div.setAttribute('id', "btn-new-task");
   content_div.innerHTML = "Add a new task";
 
-  content_div.appendChild(createInputForm());
+  content_div.appendChild(createNewTaskForm());
 
   return content_div;
 }

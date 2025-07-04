@@ -11,7 +11,7 @@ function Portfolio(name){
     let flag = false;
 
     for(let i = 0; i < list.length; i++){
-      if ( list[i].getName() === project.getNAme()){
+      if ( list[i].getName() === project.getName()){
         flag = true;
         break;
       } 
@@ -20,7 +20,7 @@ function Portfolio(name){
     if(!flag){
       list.push(project)
       if (list.length == 1){
-        setCurrentProject(list[0]);
+        setCurrentProject(project);
       }
     }
     else {
@@ -49,7 +49,9 @@ function Portfolio(name){
     return current
   }
 
-  return {getPortfolioName, addProject, getProjects, numberOfProjects, setCurrentProject, getCurrentProject}
+  return {getPortfolioName, numberOfProjects,
+     addProject, getProjects, 
+      setCurrentProject, getCurrentProject}
 }
 
 export {Portfolio}
