@@ -1,12 +1,28 @@
 import "./task_list.css"
 
 
-function createTaskListDOM(project){
-  let container = document.createElement("div")
-  container.setAttribute('class', "container");
-  let project_name = document.createElement("h2");
-  project_name.innerHTML = project.getName();
+function createTaskListDOM(portfolio){
 
+  let existing_container = document.querySelector(".container")
+  if (existing_container){
+    existing_container.innerHTML = ""
+  }
+
+  let container = document.createElement('div');
+  container.setAttribute("class", 'container');
+
+  let project_dropdown_div = document.createElement("div");
+  project_dropdown_div.setAttribute("class", "dropdown");
+  let project_list = portfolio.getProjects();
+
+  for(let j = 0; j < project_list.length; j++){
+    project_dropdown_div.appendChild(createProjectButton(project_list[j]))
+  }
+
+  project_dropdown_div.appendChild(createBlankProject());
+
+
+  let project = portfolio.getCurrentProject();
   let task_list_div = document.createElement("div");
   task_list_div.setAttribute('class', "task-list");
   let task_list = project.getTasks();
@@ -18,13 +34,31 @@ function createTaskListDOM(project){
 
   task_list_div.appendChild( createBlankTask() ); 
 
-  container.appendChild(project_name);
+  container.appendChild(project_dropdown_div);
   container.appendChild(task_list_div);
 
   return container
 }
 
+function createProjectButton(project){
+  
+  let btn_project = document.createElement("button")
+  btn_project.setAttribute('class', "project");
+  btn_project.innerHTML = project.getName();
+
+  return btn_project;
+}
+
+function createBlankProject(){
+   let btn_new_project = document.createElement("button")
+  btn_new_project.setAttribute('id', "new-project");
+  btn_new_project.innerHTML = "Create New Project";
+
+  return btn_new_project;
+}
+
 function createTaskCard(task){
+
   let task_card = document.createElement("div");
   task_card.setAttribute('class',"task-card");
   let task_title = document.createElement("div");
@@ -43,6 +77,7 @@ function createTaskCard(task){
 }
 
 function createBlankTask () {
+
   let content_div = document.createElement("button");
   content_div.classList.add("new-task");
   content_div.setAttribute('id', "btn-new-task");
@@ -51,7 +86,6 @@ function createBlankTask () {
   content_div.appendChild(createInputForm());
 
   return content_div;
-
 }
 
 
@@ -61,55 +95,16 @@ function createInputForm(){
   form_dialog.setAttribute('id', "form-dialog");
   let form = document.createElement('form');
   form.setAttribute("method", "dialog");
-  let title_div = document.createElement('div');
-  let description_div = document.createElement('div');
-  let date_div = document.createElement('div');
-  let prio_div = document.createElement('div');
 
-  let title_field = document.createElement("input");
-  let title_label = document.createElement('label');
-  title_field.type = "text"
-  title_field.setAttribute('id', 'title');
-  title_label.setAttribute("for", "title")
-  title_label.innerHTML = "Task Title "
-  title_div.appendChild(title_label);
-  title_div.appendChild(title_field);
-
-  let description_field = document.createElement("input");
-  let description_label = document.createElement('label');
-  description_field.type = "text"
-  description_field.setAttribute('id', 'description');
-  description_label.setAttribute("for", "description")
-  description_label.innerHTML = "Task Description "
-  description_div.appendChild(description_label);
-  description_div.appendChild(description_field);
-
-  let date_field = document.createElement("input");
-  let date_label = document.createElement('label');
-  date_field.type = "text"
-  date_field.setAttribute('id', 'date');
-  date_label.setAttribute("for", "date")
-  date_label.innerHTML = "Due date "
-  date_div.appendChild(date_label);
-  date_div.appendChild(date_field);
-
-  let prio_field = document.createElement("input");
-  let prio_label = document.createElement('label');
-  prio_field.type = "text"
-  prio_field.setAttribute('id', 'priority');
-  prio_label.setAttribute("for", "priority")
-  prio_label.innerHTML = "Priority "
-  prio_div.appendChild(prio_label);
-  prio_div.appendChild(prio_field);
+  form.appendChild(createFormFields('title', "Task Title"));
+  form.appendChild(createFormFields('description', "Task Description"));
+  form.appendChild(createFormFields('date', "Due Date"));
+  form.appendChild(createFormFields('priority', "Priority"));
 
   let btn_sumbit = document.createElement("button");
   btn_sumbit.setAttribute('id', "task-submit");
   btn_sumbit.innerHTML = "Create Task"
-
-  form.appendChild(title_div);
-  form.appendChild(description_div);
-  form.appendChild(date_div);
-  form.appendChild(prio_div);
+;
   form.appendChild(btn_sumbit);
 
   form_dialog.appendChild(form);
@@ -117,6 +112,20 @@ function createInputForm(){
   return form_dialog;
 }
 
+function createFormFields(input, label){
+
+  let form_field_div = document.createElement('div');
+  let form_field = document.createElement("input");
+  let form_label = document.createElement('label');
+  form_field.type = "text"
+  form_field.setAttribute('id', `${input}`);
+  form_label.setAttribute("for", `${input}`)
+  form_label.innerHTML = label
+  form_field_div.appendChild(form_label);
+  form_field_div.appendChild(form_field);
+
+  return form_field_div;
+}
 
 export {createTaskListDOM}
 
