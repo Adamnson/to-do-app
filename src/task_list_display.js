@@ -58,7 +58,9 @@ function createBlankTask () {
 function createInputForm(){
 
   let form_dialog = document.createElement('dialog');
+  form_dialog.setAttribute('id', "form-dialog");
   let form = document.createElement('form');
+  form.setAttribute("method", "dialog");
   let title_div = document.createElement('div');
   let description_div = document.createElement('div');
   let date_div = document.createElement('div');

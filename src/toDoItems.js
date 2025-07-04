@@ -25,16 +25,11 @@ function ToDoItem(item_title, desc, due_date, prio){
 }
 
 
-function captureTaskDetailsFromForm(event){
-  event.preventDefault();
+function captureTaskDetailsFromForm(data_obj){
   console.log("function called, yippie!")
-  let title = document.getElementById("title").value
-  let desc = document.getElementById("description").value
-  let date = document.getElementById("date").value
-  let prio = document.getElementById("priority").value
-
-  console.log(title)
-  console.log(desc)
-  console.log(date)
-  console.log(prio)
+  console.log(data_obj.title)
+  console.log(data_obj.desc)
+  console.log(data_obj.date)
+  console.log(data_obj.prio)
+  return new ToDoItem(data_obj.title, data_obj.desc, data_obj.date, data_obj.prio)
 }

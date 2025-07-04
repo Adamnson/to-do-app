@@ -26,11 +26,20 @@ document.querySelector("body").appendChild(tl);
 let form_dialog = document.querySelector("dialog");
 let btn_new_taks = document.querySelector("#btn-new-task");
 let btn_task_submit = document.querySelector("#task-submit");
+console.log(btn_task_submit);
+btn_new_taks.addEventListener('click', () =>
+  {form_dialog.show()})
 
-btn_new_taks.addEventListener('click', () => {
-  form_dialog.showModal()})
+btn_task_submit.addEventListener('click', preFunction)
 
-btn_task_submit.addEventListener('click', (ev) => {
-  captureTaskDetailsFromForm(ev);;
-  console.log("cheking logic");
-})
+function preFunction(){
+  console.log(form_dialog)
+  form_dialog.close();
+  let title = document.getElementById("title").value
+  let desc = document.getElementById("description").value
+  let date = document.getElementById("date").value
+  let prio = document.getElementById("priority").value
+  p1.addTask(captureTaskDetailsFromForm({title, desc, date, prio}));
+  document.querySelector("body").innerHTML = ""
+  document.querySelector("body").appendChild(createTaskListDOM(p1));
+}
