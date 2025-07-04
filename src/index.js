@@ -21,15 +21,33 @@ p1.addTask(job);
 let tl = createTaskListDOM(portfolio);
 document.querySelector("body").appendChild(tl);
 
-let form_dialog = document.querySelector("dialog");
+let new_project_form_dialog = document.querySelector("#project-form-dialog");
+let btn_new_project = document.querySelector("#btn-new-project");
+let btn_project_sumbmit = document.querySelector("#project-submit");
+
+btn_new_project.addEventListener("click", () => 
+  {new_project_form_dialog.show()})
+
+btn_project_sumbmit.addEventListener("click", newProjetDataCapture)
+
+function newProjetDataCapture(){
+  let project_name = document.getElementById("project-name").value;
+  console.log(`Creating a new project called ${project_name}`);
+  portfolio.addProject( new Project(project_name));
+    document.querySelector("body").appendChild(createTaskListDOM(portfolio));
+
+}
+
+let new_task_form_dialog = document.querySelector("#task-form-dialog");
 let btn_new_taks = document.querySelector("#btn-new-task");
 let btn_task_submit = document.querySelector("#task-submit");
+
 btn_new_taks.addEventListener('click', () =>
-  {form_dialog.show()})
+  {new_task_form_dialog.show()})
 
-btn_task_submit.addEventListener('click', preFunction)
+btn_task_submit.addEventListener('click', newTaskDataCapture)
 
-function preFunction(){
+function newTaskDataCapture(){
 
   let title = document.getElementById("title").value
   let desc = document.getElementById("description").value

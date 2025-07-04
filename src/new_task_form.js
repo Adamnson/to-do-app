@@ -2,7 +2,7 @@
 function createNewTaskForm(){
 
   let form_dialog = document.createElement('dialog');
-  form_dialog.setAttribute('id', "form-dialog");
+  form_dialog.setAttribute('id', "task-form-dialog");
   let form = document.createElement('form');
   form.setAttribute("method", "dialog");
 
@@ -13,8 +13,8 @@ function createNewTaskForm(){
 
   let btn_sumbit = document.createElement("button");
   btn_sumbit.setAttribute('id', "task-submit");
-  btn_sumbit.innerHTML = "Create Task"
-;
+  btn_sumbit.innerHTML = "Create Task";
+
   form.appendChild(btn_sumbit);
 
   form_dialog.appendChild(form);

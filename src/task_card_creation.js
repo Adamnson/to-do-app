@@ -11,6 +11,7 @@ function createCardsForTasks(project){
   }
 
   task_list_div.appendChild( createBlankTask() ); 
+  document.querySelector("body").appendChild( createNewTaskForm() );
 
   return task_list_div;  
 }
@@ -41,7 +42,7 @@ function createBlankTask () {
   content_div.setAttribute('id', "btn-new-task");
   content_div.innerHTML = "Add a new task";
 
-  content_div.appendChild(createNewTaskForm());
+  // content_div.appendChild(createNewTaskForm());
 
   return content_div;
 }
