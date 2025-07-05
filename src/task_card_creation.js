@@ -1,6 +1,9 @@
 import { createNewTaskForm } from "./new_task_form";
 
 function createCardsForTasks(project){
+
+  let task_card_container = document.createElement("div");
+  task_card_container.setAttribute('div', 'task-card-container')
   let task_list_div = document.createElement("div");
   task_list_div.setAttribute('class', "task-list");
   let task_list = project.getTasks();
@@ -10,10 +13,27 @@ function createCardsForTasks(project){
         task_list_div.appendChild(createTaskCard(task));
   }
 
-  task_list_div.appendChild( createBlankTask() ); 
+  task_card_container.appendChild(task_list_div);
+  task_card_container.appendChild( createBlankTask() ); 
   document.querySelector("body").appendChild( createNewTaskForm() );
 
-  return task_list_div;  
+  return task_card_container;  
+}
+
+function appendNewTask(project){
+  
+  let task_list_div = document.querySelector(".task-list");
+  if(!task_list_div){
+    throw Error("Missing Existing Task List To Append New Task To")
+  }
+  let task_list = project.getTasks();
+  let new_task = task_list[(task_list.length)-1];
+  console.log(new_task)
+
+  let new_task_card = createTaskCard(new_task);
+  
+  task_list_div.appendChild(new_task_card);
+
 }
 
 function createTaskCard(task){
@@ -47,4 +67,4 @@ function createBlankTask () {
   return content_div;
 }
 
-export {createCardsForTasks}
+export {createCardsForTasks, appendNewTask}
