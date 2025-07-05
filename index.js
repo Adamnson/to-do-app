@@ -4,6 +4,7 @@ import {Project} from "./project.js"
 import {Task, createTask} from "./task.js"
 import {createTaskListDOM} from "./task_list_display.js"
 import {appendNewTask} from "./task_card_creation.js"
+import { apendNewProject } from "./project_dropdown_creation.js"
 
 document.querySelector("body").appendChild(nav["nav"])
 let portfolio = new Portfolio("Briefcase");
@@ -35,7 +36,8 @@ function newProjetDataCapture(){
   let project_name = document.getElementById("project-name").value;
   console.log(`Creating a new project called ${project_name}`);
   portfolio.addProject( new Project(project_name));
-    document.querySelector("body").appendChild(createTaskListDOM(portfolio));
+  apendNewProject(portfolio)
+    // document.querySelector("body").appendChild(createTaskListDOM(portfolio));
 
 }
 

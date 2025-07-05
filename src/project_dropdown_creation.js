@@ -1,18 +1,33 @@
 function creatDropdownForProjects(portfolio){
-let project_dropdown_div = document.createElement("div");
+  let project_dropdown_div = document.createElement("div");
   project_dropdown_div.setAttribute("class", "dropdown");
+  let existing_projects_div = document.createElement("div");
+  existing_projects_div.setAttribute('class', "existing-projects");
   let project_list = portfolio.getProjects();
 
   for(let j = 0; j < project_list.length; j++){
-    project_dropdown_div.appendChild(createProjectButton(project_list[j]))
+    existing_projects_div.appendChild(createProjectButton(project_list[j]))
   }
 
+  project_dropdown_div.appendChild(existing_projects_div);
   project_dropdown_div.appendChild(createBlankProject());
   document.querySelector("body").appendChild( createNewProjectForm() );
 
   return project_dropdown_div;
 }
 
+function apendNewProject(portfolio){
+  let existing_projects_div = document.querySelector(".existing-projects");
+
+  if(!existing_projects_div){
+    throw Error("No Projects exist to be able to append to");
+  }
+
+  let project_list = portfolio.getProjects();
+  let new_project = project_list[project_list.length - 1];
+  existing_projects_div.appendChild(createProjectButton(new_project));
+
+}
 
 function createNewProjectForm(){
   let form_dialog = document.createElement('dialog');
@@ -57,4 +72,4 @@ function createBlankProject(){
   return btn_new_project;
 }
 
-export {creatDropdownForProjects}
+export {creatDropdownForProjects, apendNewProject}
