@@ -1,3 +1,5 @@
+import "./project_dropdown.css"
+
 function creatDropdownForProjects(portfolio){
   let project_dropdown_div = document.createElement("div");
   project_dropdown_div.setAttribute("class", "dropdown");
