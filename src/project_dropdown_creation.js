@@ -1,3 +1,5 @@
+import "./project_dropdown.css"
+
 function createDropdownForProjects(portfolio){
 
   let project_dropdown_div, existing_projects_div, project_list;
