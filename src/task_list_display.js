@@ -4,11 +4,6 @@ import {createDropdownForProjects} from "./project_dropdown_creation"
 
 function createTaskListDOM(portfolio){
 
-  let existing_container = document.querySelector(".container")
-  if (existing_container){
-    existing_container.innerHTML = ""
-  }
-
   let container = document.createElement('div');
   container.setAttribute("class", 'container');
 
