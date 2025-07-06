@@ -26,7 +26,6 @@ function Portfolio(name){
     else {
       throw Error(`A Project with  name '${project.getName()}' exists!` )
     }
-
   }
 
   function getProjects(){
@@ -49,7 +48,7 @@ function Portfolio(name){
     return current
   }
 
-    function getProjectByName(name)
+  function getProjectByName(name)
   {
     for(let i = 0; i < list.length; i++){
       if ( list[i].getName() === name){
@@ -58,7 +57,6 @@ function Portfolio(name){
     }
     throw Error(`Project with name ${name} not found` );
   }
-
 
   return {getPortfolioName, numberOfProjects,
      addProject, getProjects, getProjectByName,

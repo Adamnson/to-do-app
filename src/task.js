@@ -24,7 +24,6 @@ function Task(item_title, desc, due_date, prio){
   return {title, description, dueDate, priority}
 }
 
-
 function createTask(data_obj){
   return new Task(data_obj.title, data_obj.desc, data_obj.date, data_obj.prio)
 }

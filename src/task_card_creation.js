@@ -8,7 +8,6 @@ function createCardsForTasks(project, switching=false){
   task_card_container.setAttribute('class', 'task-card-container')
   task_list_div = document.createElement("div");
   task_list_div.setAttribute('class', "task-list");
-
   task_list = project.getTasks();
   
   for(let i = 0; i < project.numberOfTasks(); i++){
@@ -27,29 +26,31 @@ function createCardsForTasks(project, switching=false){
 }
 
 function appendNewTask(project){
+
+  let task_list_div, task_list, new_task, new_task_card;
   
-  let task_list_div = document.querySelector(".task-list");
+  task_list_div = document.querySelector(".task-list");
   if(!task_list_div){
     throw Error("Missing Existing Task List To Append New Task To")
   }
-  let task_list = project.getTasks();
-  let new_task = task_list[(task_list.length)-1];
-
-  let new_task_card = createTaskCard(new_task);
   
+  task_list = project.getTasks();
+  new_task = task_list[(task_list.length)-1];
+  new_task_card = createTaskCard(new_task);
   task_list_div.appendChild(new_task_card);
-
 }
 
 function createTaskCard(task){
 
-  let task_card = document.createElement("div");
+  let task_card, task_title, task_title_txt, task_description;
+
+  task_card = document.createElement("div");
   task_card.setAttribute('class',"task-card");
-  let task_title = document.createElement("div");
+  task_title = document.createElement("div");
   task_title.setAttribute('class', "task-title");
-  let task_title_txt = document.createElement("h3");
+  task_title_txt = document.createElement("h3");
   task_title_txt.innerHTML = task.title()
-  let task_description = document.createElement("div");
+  task_description = document.createElement("div");
   task_description.setAttribute('class', "task-body");
   task_description.innerHTML = task.description(); 
   

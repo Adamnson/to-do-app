@@ -1,9 +1,12 @@
 import "./navbar.css"
 
-let nav = document.createElement('nav');
+let nav, home_button;
 
-let home_button = document.createElement('button');
+nav = document.createElement('nav');
+
+home_button = document.createElement('button');
 home_button.innerHTML = "Tasks..."
 
 nav.appendChild(home_button)
+
 export { nav }
