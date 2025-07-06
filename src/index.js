@@ -1,11 +1,12 @@
-import nav from "./navbar"
+import { nav } from "./navbar"
 import { Portfolio } from "./portfolio.js"
-import {Project} from "./project.js"
-import {Task} from "./task.js"
-import {createTaskListDOM} from "./task_list_display.js"
-import {addProjectEventListeners} from "./add_project_el.js"
+import { Project } from "./project.js"
+import { Task } from "./task.js"
+import { createTaskListDOM } from "./task_list_display.js"
+import { addProjectEventListeners } from "./add_project_el.js"
+import { addTaskEventListeners } from "./add_task_el.js"
 
-document.querySelector("body").appendChild(nav["nav"])
+document.querySelector("body").appendChild(nav)
 let portfolio = new Portfolio("Briefcase");
 
 
@@ -22,4 +23,4 @@ p1.addTask(job);
 let tl = createTaskListDOM(portfolio);
 document.querySelector("body").appendChild(tl);
 addProjectEventListeners(portfolio);
-// addTaskEventListeners();
+addTaskEventListeners(portfolio.getCurrentProject());

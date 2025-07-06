@@ -28,7 +28,6 @@ function appendNewTask(project){
   }
   let task_list = project.getTasks();
   let new_task = task_list[(task_list.length)-1];
-  console.log(new_task)
 
   let new_task_card = createTaskCard(new_task);
   

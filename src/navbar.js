@@ -6,4 +6,4 @@ let home_button = document.createElement('button');
 home_button.innerHTML = "Tasks..."
 
 nav.appendChild(home_button)
-export default { nav }
+export { nav }
