@@ -1,6 +1,8 @@
 import { Project } from "./project.js"
 import { Portfolio } from "./portfolio.js"
-import {apendNewProject} from "./project_dropdown_creation.js"
+import { apendNewProject } from "./project_dropdown_creation.js"
+import { swithTasksForProject } from "./task_list_display.js"
+import { addTaskEventListeners } from "./add_task_el.js"
 
 function newProjectELSetup(portfolio) {
   let new_project_form_dialog = document.querySelector("#project-form-dialog");
@@ -11,6 +13,7 @@ function newProjectELSetup(portfolio) {
     {new_project_form_dialog.show()})
 
   btn_project_sumbmit.addEventListener("click", ()=>{newProjetDataCapture(portfolio)})
+  addTaskEventListeners(portfolio);
 }
 
 function newProjetDataCapture(portfolio){
@@ -38,6 +41,8 @@ function addProjectEventListeners(portfolio, setup = true){
         let target_project = portfolio.getProjectByName(new_project_btn.innerHTML);
         portfolio.setCurrentProject(target_project);
         console.log(`Current project set to ${(portfolio.getCurrentProject()).getName()}`);
+        console.log(`switching: ${!setup}`)
+        swithTasksForProject(portfolio);
       }
   });
 }

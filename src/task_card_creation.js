@@ -1,21 +1,27 @@
 import { createNewTaskForm } from "./new_task_form";
 
-function createCardsForTasks(project){
+function createCardsForTasks(project, switching=false){
 
-  let task_card_container = document.createElement("div");
-  task_card_container.setAttribute('div', 'task-card-container')
-  let task_list_div = document.createElement("div");
+  let task_card_container, task_list_div, task_list;
+
+  task_card_container = document.createElement("div");
+  task_card_container.setAttribute('class', 'task-card-container')
+  task_list_div = document.createElement("div");
   task_list_div.setAttribute('class', "task-list");
-  let task_list = project.getTasks();
 
+  task_list = project.getTasks();
+  
   for(let i = 0; i < project.numberOfTasks(); i++){
     let task = task_list[i];
         task_list_div.appendChild(createTaskCard(task));
   }
 
   task_card_container.appendChild(task_list_div);
-  task_card_container.appendChild( createBlankTask() ); 
-  document.querySelector("body").appendChild( createNewTaskForm() );
+  
+  if(!switching){
+    task_card_container.appendChild( createBlankTask() ); 
+    document.querySelector("body").appendChild( createNewTaskForm() );
+  }
 
   return task_card_container;  
 }
@@ -60,8 +66,6 @@ function createBlankTask () {
   content_div.classList.add("new-task");
   content_div.setAttribute('id', "btn-new-task");
   content_div.innerHTML = "Add a new task";
-
-  // content_div.appendChild(createNewTaskForm());
 
   return content_div;
 }

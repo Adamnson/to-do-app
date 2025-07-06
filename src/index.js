@@ -4,11 +4,9 @@ import { Project } from "./project.js"
 import { Task } from "./task.js"
 import { createTaskListDOM } from "./task_list_display.js"
 import { addProjectEventListeners } from "./add_project_el.js"
-import { addTaskEventListeners } from "./add_task_el.js"
 
 document.querySelector("body").appendChild(nav)
 let portfolio = new Portfolio("Briefcase");
-
 
 let p1 = new Project("Magic");
 portfolio.addProject(p1);
@@ -19,8 +17,6 @@ let job = new Task("get a job", "find a company, an open position, and apply", "
 p1.addTask(item1);
 p1.addTask(job);
 
-
 let tl = createTaskListDOM(portfolio);
 document.querySelector("body").appendChild(tl);
 addProjectEventListeners(portfolio);
-addTaskEventListeners(portfolio.getCurrentProject());
