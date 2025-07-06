@@ -1,4 +1,4 @@
-function creatDropdownForProjects(portfolio){
+function createDropdownForProjects(portfolio){
   let project_dropdown_div = document.createElement("div");
   project_dropdown_div.setAttribute("class", "dropdown");
   let existing_projects_div = document.createElement("div");
@@ -72,4 +72,4 @@ function createBlankProject(){
   return btn_new_project;
 }
 
-export {creatDropdownForProjects, apendNewProject}
+export {createDropdownForProjects, apendNewProject}

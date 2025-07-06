@@ -49,8 +49,19 @@ function Portfolio(name){
     return current
   }
 
+    function getProjectByName(name)
+  {
+    for(let i = 0; i < list.length; i++){
+      if ( list[i].getName() === name){
+        return list[i];
+      } 
+    }
+    throw Error(`Project with name ${name} not found` );
+  }
+
+
   return {getPortfolioName, numberOfProjects,
-     addProject, getProjects, 
+     addProject, getProjects, getProjectByName,
       setCurrentProject, getCurrentProject}
 }
 

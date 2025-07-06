@@ -22,6 +22,7 @@ p1.addTask(job);
 
 let tl = createTaskListDOM(portfolio);
 document.querySelector("body").appendChild(tl);
+addProjectEventListeners()
 
 let new_project_form_dialog = document.querySelector("#project-form-dialog");
 let btn_new_project = document.querySelector("#btn-new-project");
@@ -36,7 +37,8 @@ function newProjetDataCapture(){
   let project_name = document.getElementById("project-name").value;
   console.log(`Creating a new project called ${project_name}`);
   portfolio.addProject( new Project(project_name));
-  apendNewProject(portfolio)
+  apendNewProject(portfolio);
+  addProjectEventListeners();
     // document.querySelector("body").appendChild(createTaskListDOM(portfolio));
 
 }
@@ -59,4 +61,15 @@ function newTaskDataCapture(){
   p1.addTask(createTask({title, desc, date, prio}));
   appendNewTask(p1);
   // document.querySelector("body").appendChild(createTaskListDOM(portfolio));
+}
+
+function addProjectEventListeners(){
+  let new_project_btn = document.querySelector(".existing-projects").lastChild;
+  console.log(new_project_btn)
+    new_project_btn.addEventListener('click', ()=>{
+      console.log(`btn clicked was ${new_project_btn.innerHTML}`)
+      portfolio.setCurrentProject(portfolio.getProjectByName(new_project_btn.innerHTML))
+      console.log(`Current project set to ${(portfolio.getCurrentProject()).getName()}`);
+    }
+    )
 }
