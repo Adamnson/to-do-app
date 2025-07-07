@@ -32,7 +32,6 @@ function getTaskListDiv(project) {
   }
 
   return task_list_div;
-
 }
 
 function appendNewTask(project){
@@ -55,21 +54,41 @@ function appendNewTask(project){
 
 function createTaskCard(task){
 
-  let task_card, task_title, task_title_txt, task_description;
+  let task_card, task_details, task_title, task_title_txt, 
+  task_description, task_due_date, date_object, prio_el;
 
   task_card = document.createElement("div");
   task_card.setAttribute('class',"task-card");
+
+  task_details = document.createElement('div');
+  task_details.setAttribute("class", "task-details");
+  
   task_title = document.createElement("div");
   task_title.setAttribute('class', "task-title");
   task_title_txt = document.createElement("h3");
   task_title_txt.innerHTML = task.title()
+  
   task_description = document.createElement("div");
   task_description.setAttribute('class', "task-body");
   task_description.innerHTML = task.description(); 
   
+  date_object = task.dueDate();
+  task_due_date = document.createElement("div");
+  task_due_date.setAttribute("class","date");
+  task_due_date.innerHTML = date_object.dd + "/" + date_object.mm + "/" +date_object.yy
+  
+  prio_el = document.createElement('div');
+  prio_el.setAttribute('class',"prio");
+  prio_el.classList.add(task.priority());
+  prio_el.innerHTML = task.priority();
+
   task_title.appendChild(task_title_txt);
-  task_card.appendChild(task_title);
-  task_card.appendChild(task_description);
+  task_details.appendChild(task_title);
+  task_details.appendChild(task_due_date);
+  task_details.appendChild(task_description);
+
+  task_card.appendChild(prio_el);
+  task_card.appendChild(task_details)
 
   return task_card;
 }

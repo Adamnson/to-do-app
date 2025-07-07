@@ -1,0 +1,8 @@
+.date {
+  display: flex;
+}
+
+.date > input {
+  max-width: 3rem;
+  margin-inline: 0.5rem;
+}

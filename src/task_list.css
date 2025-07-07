@@ -15,8 +15,30 @@
 .task-card {
   border: 2px solid grey;
   margin-inline: 0.75rem;
+  display: flex;
 }
 
+.prio {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  display: none;
+}
+
+.task-card:hover .prio {
+  display: block;
+}
+
+.low {
+  background-color: green;
+}
+
+.medium {
+  background-color: orange;
+}
+
+.high{
+  background-color: maroon;
+}
 .task-title {
   display: flex;
   justify-content: center;

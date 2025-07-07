@@ -13,7 +13,7 @@ function newProjectELSetup(portfolio) {
   btn_project_sumbmit = document.querySelector("#project-submit");
 
   btn_new_project.addEventListener("click", () => 
-    {new_project_form_dialog.show()})
+    {new_project_form_dialog.showModal()})
 
   btn_project_sumbmit.addEventListener("click", ()=>{newProjetDataCapture(portfolio)})
   addTaskEventListeners(portfolio);

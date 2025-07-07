@@ -10,8 +10,8 @@
   &:hover{
     height: 100%;
   }
-  
 }
+
 .dropdown > *{
   width: 100%;
   margin-bottom: 0.1rem;
