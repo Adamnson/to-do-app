@@ -28,7 +28,7 @@
   padding-inline: 0.25rem;
 }
 
-.new-task {
+#btn-new-task {
   display: flex;
   justify-content: center;
   align-items: center;

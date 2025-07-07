@@ -24,7 +24,6 @@ function swithTasksForProject(portfolio){
 
   task_list_div = document.querySelector(".task-list")
   new_task_btn = document.querySelector("#btn-new-task");
-  console.log(` the input to create a new task list is ${(portfolio.getCurrentProject()).getName()}`);
   task_list_div.innerHTML = ""
   updated_task_list_div = getTaskListDiv(portfolio.getCurrentProject())
   Array.from(updated_task_list_div.childNodes).forEach( new_task => {

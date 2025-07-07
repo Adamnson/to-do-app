@@ -40,18 +40,27 @@ function addProjectEventListeners(portfolio, setup = true){
     newProjectELSetup(portfolio);
   }
   new_project_btn = document.querySelector(".existing-projects").lastChild;
-  new_project_btn.addEventListener('click', ()=>{
-    console.log(`btn clicked was ${new_project_btn.innerHTML}`)
+  new_project_btn.addEventListener('click', (ev)=>{
     if( (portfolio.getCurrentProject()).getName() == new_project_btn.innerHTML){
-      console.log(`Already on ${new_project_btn.innerHTML}`)
+      alert(`Already on ${new_project_btn.innerHTML}`);
       } else {
       let target_project = portfolio.getProjectByName(new_project_btn.innerHTML);
       portfolio.setCurrentProject(target_project);
-      console.log(`Current project set to ${(portfolio.getCurrentProject()).getName()}`);
-      console.log(`switching: ${!setup}`)
+      switchProjectNameDisplay(ev)
       swithTasksForProject(portfolio);
     }
   });
+}
+
+function switchProjectNameDisplay(ev){
+  
+  let current_project_button, existing_projects;
+
+  current_project_button= ev.target
+  existing_projects = document.querySelector(".existing-projects");
+  existing_projects.removeChild(current_project_button);
+  existing_projects.insertBefore(current_project_button, existing_projects.firstChild);
+
 }
 
 export {addProjectEventListeners}
