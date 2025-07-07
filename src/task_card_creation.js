@@ -55,10 +55,13 @@ function appendNewTask(project){
 function createTaskCard(task){
 
   let task_card, task_details, task_title, task_title_txt, 
-  task_description, task_due_date, date_object, prio_el;
+  task_description, task_due_date, date_object, prio_el, prio;
+
+  prio = task.priority();
 
   task_card = document.createElement("div");
   task_card.setAttribute('class',"task-card");
+  task_card.classList.add(`${prio}-prio-task`)
 
   task_details = document.createElement('div');
   task_details.setAttribute("class", "task-details");
@@ -79,8 +82,8 @@ function createTaskCard(task){
   
   prio_el = document.createElement('div');
   prio_el.setAttribute('class',"prio");
-  prio_el.classList.add(task.priority());
-  prio_el.innerHTML = task.priority();
+  prio_el.classList.add(prio);
+  prio_el.innerHTML = prio;
 
   task_title.appendChild(task_title_txt);
   task_details.appendChild(task_title);

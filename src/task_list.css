@@ -15,13 +15,18 @@
 .task-card {
   border: 2px solid grey;
   margin-inline: 0.75rem;
-  display: flex;
+  &:hover{
+    display: grid;
+    grid-template-columns: 1fr 10fr;
+  }
 }
 
 .prio {
   writing-mode: vertical-rl;
   text-orientation: upright;
   display: none;
+  text-align: center;
+  height: 100%;
 }
 
 .task-card:hover .prio {
@@ -29,16 +34,29 @@
 }
 
 .low {
-  background-color: green;
+  background-color: rgb(9, 148, 9);
 }
 
 .medium {
-  background-color: orange;
+  background-color: hsl(36, 83%, 50%);
 }
 
 .high{
-  background-color: maroon;
+  background-color: hsl(0, 88%, 44%);
 }
+
+.low-prio-task {
+  border-left: 0.5rem solid rgb(9, 148, 9);
+}
+
+.medium-prio-task {
+  border-left: 0.5rem solid hsl(36, 83%, 50%);
+}
+
+.high-prio-task {
+  border-left: 0.5rem solid hsl(0, 88%, 44%);
+}
+
 .task-title {
   display: flex;
   justify-content: center;
