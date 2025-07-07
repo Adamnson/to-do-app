@@ -2,42 +2,55 @@ import { createNewTaskForm } from "./new_task_form";
 
 function createCardsForTasks(project, switching=false){
 
-  let task_card_container, task_list_div, task_list;
+  let task_card_container, task_list_div;
 
   task_card_container = document.createElement("div");
   task_card_container.setAttribute('class', 'task-card-container')
-  task_list_div = document.createElement("div");
-  task_list_div.setAttribute('class', "task-list");
-  task_list = project.getTasks();
   
-  for(let i = 0; i < project.numberOfTasks(); i++){
-    let task = task_list[i];
-        task_list_div.appendChild(createTaskCard(task));
-  }
-
+  task_list_div = getTaskListDiv(project)
   task_card_container.appendChild(task_list_div);
   
   if(!switching){
-    task_card_container.appendChild( createBlankTask() ); 
+    task_list_div.appendChild( createBlankTask() ); 
     document.querySelector("body").appendChild( createNewTaskForm() );
   }
 
   return task_card_container;  
 }
 
+function getTaskListDiv(project) {
+  
+  let task_list_div, task_list;
+
+  task_list_div = document.createElement("div");
+  task_list_div.setAttribute('class', "task-list");
+  task_list = project.getTasks();
+
+  for(let i = 0; i < project.numberOfTasks(); i++){
+    let task = task_list[i];
+        task_list_div.appendChild(createTaskCard(task));
+  }
+
+  return task_list_div;
+
+}
+
 function appendNewTask(project){
 
-  let task_list_div, task_list, new_task, new_task_card;
+  let task_list_div, task_list, new_task, new_task_card, new_task_btn;
   
   task_list_div = document.querySelector(".task-list");
   if(!task_list_div){
     throw Error("Missing Existing Task List To Append New Task To")
   }
   
+  new_task_btn  = document.querySelector("#btn-new-task")
   task_list = project.getTasks();
   new_task = task_list[(task_list.length)-1];
   new_task_card = createTaskCard(new_task);
+  task_list_div.removeChild(new_task_btn);
   task_list_div.appendChild(new_task_card);
+  task_list_div.appendChild(new_task_btn);
 }
 
 function createTaskCard(task){
@@ -71,4 +84,4 @@ function createBlankTask () {
   return content_div;
 }
 
-export {createCardsForTasks, appendNewTask}
+export {createCardsForTasks, appendNewTask, getTaskListDiv}
