@@ -1,4 +1,5 @@
 import { createNewTaskForm } from "./new_task_form";
+import "./common"
 
 function createCardsForTasks(project, switching=false){
 
@@ -83,7 +84,7 @@ function createTaskCard(task){
   prio_el = document.createElement('div');
   prio_el.setAttribute('class',"prio");
   prio_el.classList.add(prio);
-  prio_el.innerHTML = prio;
+  prio_el.innerHTML = prio.capitalize();
 
   task_title.appendChild(task_title_txt);
   task_details.appendChild(task_title);

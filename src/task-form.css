@@ -1,8 +1,77 @@
+/* #task-form-dialog.open {
+  display: flex;
+  justify-content: center;
+} */
+
+#task-form-dialog{
+  border-radius: .85rem;
+}
+
+#task-form  {
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
+  margin: 1.5rem;
+}
+
+#task-form > div {
+  margin: 0.45rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+#task-form > div > input {
+  margin-left: 1rem;
+  min-height: 1.5rem;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  &:focus{
+    border: 0.1rem solid palegoldenrod;
+    #task-form > div > label{
+      color: red;
+    }
+
+  }
+}
+
+.prio-field{
+  display: flex;
+  align-items: center;
+}
+  
+#low:checked + #low-text {   
+  color:green;
+  font-size: 1.2rem;
+}
+
+#medium:checked + #medium-text {
+  color: orange;
+  font-size: 1.2rem;
+}
+
+#high:checked + #high-text {
+  color: red;
+  font-size: 1.2rem;
+}
+
+
+#task-form > div > label {
+  font-size: 1.2rem;
+}
+
 .date {
   display: flex;
+
 }
 
 .date > input {
-  max-width: 3rem;
+  max-width: 2.5rem;
   margin-inline: 0.5rem;
+  text-align: center;
+}
+
+#task-submit {
+  min-height: 2rem;
+  font-size: 1.3rem;
+  border-radius: 0.5rem;
 }

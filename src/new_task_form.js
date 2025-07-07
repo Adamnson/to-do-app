@@ -9,6 +9,7 @@ function createNewTaskForm(){
   form_dialog.setAttribute('id', "task-form-dialog");
   form = document.createElement('form');
   form.setAttribute("method", "dialog");
+  form.setAttribute("id", "task-form")
 
   form.appendChild(createTextFormFields('title', "Task Title"));
   form.appendChild(createTextFormFields('description', "Task Description"));
@@ -44,12 +45,11 @@ function createTextFormFields(input, label){
 
 function createDateFormField() {
     
-  let form_field, form_label, date_fields, date_components;
+  let form_field, form_label, date_components;
 
   date_components = ["d","m","y"]
 
   form_field = document.createElement('div');
-  date_fields = document.createElement("span");
   form_field.setAttribute("class","date");
   form_label = document.createElement("label");
   form_label.setAttribute("for","date")
@@ -65,15 +65,14 @@ function createDateFormField() {
     form_field.appendChild(input_el)
   }
 
-  form_field.appendChild(date_fields)
-
   return form_field
 }
   
 function createRadioFormFields(){
   let form_field, form_label, prios;
 
-  form_field = document.createElement("div")
+  form_field = document.createElement("div");
+  form_field.setAttribute("class", "prio-field")
   prios = ["low", "medium", "high"];
 
   form_label = document.createElement("label");
@@ -86,7 +85,7 @@ function createRadioFormFields(){
     if (prios[i]=="low"){
       input_el += `checked`;
     }
-    input_el += `>`+ `${prios[i].capitalize()}`;
+    input_el += `>`+ `<p id=${prios[i]}-text>${prios[i].capitalize()}</p>`;
     form_field.innerHTML += (input_el);
   }
   
