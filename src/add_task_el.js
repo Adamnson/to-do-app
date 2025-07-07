@@ -52,7 +52,7 @@ function newTaskDataCapture(current_project){
   document.getElementById("dd").placeholder = "DD"
   document.getElementById("mm").placeholder = "MM"
   document.getElementById("yy").placeholder = "YY"
-  // document.getElementById("priority").value = "";
+  document.getElementById("low").checked = true;
   
   appendNewTask(current_project);
 }
