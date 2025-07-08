@@ -11,10 +11,10 @@ function createNewTaskForm(){
   form.setAttribute("method", "dialog");
   form.setAttribute("id", "task-form")
 
-  form.appendChild(createTextFormFields('title', "Task Title"));
-  form.appendChild(createTextFormFields('description', "Task Description"));
-  form.appendChild(createDateFormField('date', "Due Date", "date"));
-  form.appendChild(createRadioFormFields('priority', "Priority"));
+  form.appendChild( createTextFormFields() );
+  form.appendChild( createTextAreaFormFields() );
+  form.appendChild( createDateFormField() );
+  form.appendChild( createRadioFormFields() );
 
   btn_sumbit = document.createElement("button");
   btn_sumbit.setAttribute('id', "task-submit");
@@ -26,21 +26,36 @@ function createNewTaskForm(){
   return form_dialog;
 }
 
-function createTextFormFields(input, label){
+function createTextFormFields(){
 
   let form_field_div, form_field, form_label;
 
   form_field_div = document.createElement('div');
   form_field = document.createElement("input");
   form_label = document.createElement('label');
-  form_field.type = "text"
-  form_field.setAttribute('id', `${input}`);
-  form_label.setAttribute("for", `${input}`)
-  form_label.innerHTML = label
+  form_field.type = "text";
+  form_field.setAttribute('id', `title`);
+  form_label.setAttribute("for", `title`);
+  form_label.innerHTML = "Task Title";
   form_field_div.appendChild(form_label);
   form_field_div.appendChild(form_field);
 
   return form_field_div;
+}
+function createTextAreaFormFields(){
+  let form_field_div, form_field, form_label;
+
+  form_field_div = document.createElement('div');
+  form_field = document.createElement("textarea");
+  form_label = document.createElement('label');
+  form_field.setAttribute('id', `description`);
+  form_label.setAttribute("for", `description`);
+  form_label.innerHTML = "Task Description";
+  form_field_div.appendChild(form_label);
+  form_field_div.appendChild(form_field);
+
+  return form_field_div;
+
 }
 
 function createDateFormField() {
