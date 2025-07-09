@@ -4,15 +4,16 @@ import {createDropdownForProjects} from "./project_dropdown_creation"
 
 function createTaskListDOM(portfolio){
 
-  let container, project_dropdown_div, task_list_div;
+  let nav, container, project_dropdown_div, task_list_div;
 
+  nav = document.querySelector('nav');
   container = document.createElement('div');
   container.setAttribute("class", 'container');
 
   project_dropdown_div = createDropdownForProjects(portfolio);
   task_list_div = createCardsForTasks( portfolio.getCurrentProject() );
 
-  container.appendChild(project_dropdown_div);
+  nav.appendChild(project_dropdown_div);
   container.appendChild(task_list_div);
 
   return container

@@ -1,8 +1,12 @@
 .container {
-  border: 3px solid hotpink;
+  margin-top: 15rem;
+  border: 3px solid goldenrod;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-self: center;
+  min-width: 16rem;
+  max-width: 60vw;
 }
 
 .task-list {
@@ -15,6 +19,8 @@
 .task-card {
   border: 2px solid grey;
   margin-inline: 0.75rem;
+  margin-block-start: 1rem;
+  margin-block-end: 3rem;
   &:hover{
     display: grid;
     grid-template-columns: 1fr 10fr;
