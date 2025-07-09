@@ -14,9 +14,9 @@ p1 = new Project("Magic");
 portfolio.addProject(p1);
 
 date = {dd: 4, mm: 12, yy: 25}
-item1 = new Task("create To Do App", "To create an application to track tasks",  date,"low");
+item1 = new Task("To do app", `1.Project button on left\n\n2.project drop down aside on right\n\n3.date progress bar in cards`,  date,"low");
 date = {dd: 23, mm: 10, yy: 22}
-job = new Task("get a job", "find a company, an open position, and apply", date, "high");
+job = new Task("Library App", "1.Styling of content\n\n2.Styling", date, "medium");
 
 p1.addTask(item1);
 p1.addTask(job);
