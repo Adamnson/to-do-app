@@ -27,6 +27,7 @@
   &:hover{
     display: grid;
     grid-template-columns: 1fr 10fr;
+    box-shadow: 11px 5px 5px rgb(83, 12, 226);
   }
 }
 
@@ -70,14 +71,26 @@
 
 .low-prio-task {
   border-left: 0.5rem solid rgb(9, 148, 9);
+  box-shadow: inset 0.5rem 0.5rem rgb(9, 148, 9);
+  &:hover{
+  box-shadow: 11px 5px 5px rgb(9, 148, 9);
+  }
 }
 
 .medium-prio-task {
   border-left: 0.5rem solid hsl(36, 83%, 50%);
+  box-shadow: inset 0.5rem 0.5rem hsl(36, 83%, 50%);
+  &:hover{
+  box-shadow: 11px 5px 5px hsl(36, 83%, 50%);
+  }
 }
 
 .high-prio-task {
   border-left: 0.5rem solid hsl(0, 88%, 44%);
+  box-shadow: inset 0.5rem 0.5rem hsl(0, 88%, 44%);
+  &:hover{
+  box-shadow: 11px 5px 5px hsl(0, 88%, 44%);
+  }
 }
 
 .task-title {
@@ -95,10 +108,6 @@
   padding-inline: 0.25rem;
 }
 
-.task-card:hover .task-body {
-  border-radius: 0 0 0 4rem;
-  border: 5px solid rebeccapurple;
-}
 
 #btn-new-task {
   margin-top: 1rem;
@@ -119,7 +128,7 @@
   &:hover{
     scale: 1;
     font-size: 1.2rem;
-    border-radius: 0 4rem 0 0;
+    border-radius: 0 4rem 30% 30%;
     background-image: linear-gradient(180deg, rgb(83, 12, 226),black,  black,black);
     border: 0.3rem solid  grey;
   }

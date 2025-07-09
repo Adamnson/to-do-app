@@ -49,6 +49,12 @@
   margin-top: 1rem;
 }
 
+textarea {
+  min-height: 5rem;
+  border-radius: 0.5rem;
+  margin-left: 1rem;
+}
+
 .prio-field{
   display: flex;
   align-items: center;
@@ -69,13 +75,18 @@
   font-size: 1.2rem;
 }
 
-.date {
+.due-date {
   display: flex;
-
 }
 
-.date > input {
+.due-date > input {
   max-width: 2.5rem;
   margin-inline: 0.5rem;
   text-align: center;
+}
+
+@media (max-width: 580px) {
+ #task-form-dialog{
+  transition: visibility 3s linear;
+ } 
 }

@@ -12,6 +12,8 @@ function newProjectELSetup(portfolio) {
   btn_new_project = document.querySelector("#btn-new-project");
   btn_project_sumbmit = document.querySelector("#project-submit");
 
+  btn_new_project.innerHTML = "+"
+
   btn_new_project.addEventListener("click", () => 
     {new_project_form_dialog.showModal()})
 

@@ -55,7 +55,6 @@ function createTextAreaFormFields(){
   form_field_div.appendChild(form_field);
 
   return form_field_div;
-
 }
 
 function createDateFormField() {
@@ -65,9 +64,9 @@ function createDateFormField() {
   date_components = ["d","m","y"]
 
   form_field = document.createElement('div');
-  form_field.setAttribute("class","date");
+  form_field.setAttribute("class","due-date");
   form_label = document.createElement("label");
-  form_label.setAttribute("for","date")
+  form_label.setAttribute("for","due-date")
   form_label.innerHTML = "Due Date"
 
   form_field.appendChild(form_label);
