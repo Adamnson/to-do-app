@@ -15,6 +15,14 @@ function newProjectELSetup(portfolio) {
   btn_new_project.addEventListener("click", () => 
     {new_project_form_dialog.showModal()})
 
+  btn_new_project.addEventListener("mouseover",()=>{
+    btn_new_project.innerHTML = "Create New Project"
+  })
+
+  btn_new_project.addEventListener("mouseout",()=>{
+    btn_new_project.innerHTML = "+"
+  })
+
   btn_project_sumbmit.addEventListener("click", ()=>{newProjetDataCapture(portfolio)})
   addTaskEventListeners(portfolio);
 }

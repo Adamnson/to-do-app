@@ -50,7 +50,6 @@ function createBlankProject(){
   
   let btn_new_project = document.createElement("button")
   btn_new_project.setAttribute('id', "btn-new-project");
-  btn_new_project.innerHTML = "Create New Project";
 
   return btn_new_project;
 }

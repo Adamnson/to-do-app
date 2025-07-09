@@ -1,13 +1,13 @@
 .dropdown {
-  display: flex;
-  flex-direction: column;
+  display: flex;  
   align-items: center;
   align-self: center;
   margin-block: 0.5rem;
-  border: 3px solid sandybrown;
+  border: 3px solid black;
   border-radius: 0.25rem;
-  height: 2rem;
   transition: height 1s;
+  min-width: 100%;
+  max-width: 100%;
   &:hover{
     height: 100%;
   }
@@ -16,12 +16,21 @@
 .dropdown > *{
   width: 100%;
   margin-bottom: 0.1rem;
-  height: 2rem;
   border-radius: 0.25rem;
   transition: height 1s;
+  min-height: 5rem;
 }
 
-.dropdown > *:not(:first-child),
+.existing-projects {
+  display: flex;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.project {
+  max-width: 7rem;
+}
+
 .existing-projects > *:not(:first-child)  {
   visibility: hidden;
   transition:  visibility 1s;
@@ -37,11 +46,23 @@
 }
 
 .existing-projects > button {
-  width: 100%;
-  height: 2rem;
+  width: auto;
   border-radius: 0.25rem;
+  margin-right: 1rem;
+  font-size: 2rem;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .existing-projects > *:not(:last-child){
   margin-bottom: 0.1rem;
+}
+
+#btn-new-project {
+  max-width: 6rem;
+  font-size: 3rem;
+  &:hover {
+    font-size: 1rem;
+  }
 }

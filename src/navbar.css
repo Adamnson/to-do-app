@@ -6,6 +6,6 @@ nav {
   justify-content: space-between;
 }
 
-nav > button {
+nav > * {
   min-height: 5rem;
 }
