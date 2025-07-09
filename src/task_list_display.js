@@ -1,7 +1,7 @@
 import "./task_list.css"
 import {createCardsForTasks, getTaskListDiv} from "./task_card_creation"
 import {createDropdownForProjects} from "./project_dropdown_creation"
-import {projectStatAside} from "./project-stat-aside.js"
+import {projectStatAside, updateTaskCountInAside} from "./project-stat-aside.js"
 
 function createTaskListDOM(portfolio){
 
@@ -23,16 +23,19 @@ function createTaskListDOM(portfolio){
 
 function swithTasksForProject(portfolio){
 
-  let  task_list_div, new_task_btn, updated_task_list_div;
+  let  task_list_div, new_task_btn, updated_task_list_div, current_project;
 
+  current_project = portfolio.getCurrentProject();
+  console.log(`supposedly switched ${current_project.getName()}`)
   task_list_div = document.querySelector(".task-list")
   new_task_btn = document.querySelector("#btn-new-task");
   task_list_div.innerHTML = ""
-  updated_task_list_div = getTaskListDiv(portfolio.getCurrentProject())
+  updated_task_list_div = getTaskListDiv(current_project)
   Array.from(updated_task_list_div.childNodes).forEach( new_task => {
     task_list_div.appendChild(new_task)
   })
   task_list_div.appendChild(new_task_btn)
+  updateTaskCountInAside(portfolio.getCurrentProject())
 }
 
 export {createTaskListDOM, swithTasksForProject}

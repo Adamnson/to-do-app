@@ -1,11 +1,14 @@
 import {appendNewTask} from "./task_card_creation.js"
 import {createTask} from "./task.js"
 import {Project} from "./project.js"
+import {updateTaskCountInAside} from "./project-stat-aside.js"
 
 function addTaskEventListeners(portfolio){
 
+  
   let new_task_form_dialog, btn_new_taks, btn_task_submit;
 
+  updateTaskCountInAside(portfolio.getCurrentProject());
   new_task_form_dialog = document.querySelector("#task-form-dialog");
   btn_new_taks = document.querySelector("#btn-new-task");
   btn_task_submit = document.querySelector("#task-submit");
@@ -23,6 +26,7 @@ function addTaskEventListeners(portfolio){
 
   btn_task_submit.addEventListener('click', () => {
     newTaskDataCapture(portfolio.getCurrentProject())
+    updateTaskCountInAside(portfolio.getCurrentProject());
   });
 }
 
