@@ -1,6 +1,7 @@
 import "./task_list.css"
 import {createCardsForTasks, getTaskListDiv} from "./task_card_creation"
 import {createDropdownForProjects} from "./project_dropdown_creation"
+import {projectStatAside} from "./project-stat-aside.js"
 
 function createTaskListDOM(portfolio){
 
@@ -14,6 +15,7 @@ function createTaskListDOM(portfolio){
   task_list_div = createCardsForTasks( portfolio.getCurrentProject() );
 
   nav.appendChild(project_dropdown_div);
+  document.querySelector("body").appendChild(projectStatAside());
   container.appendChild(task_list_div);
 
   return container

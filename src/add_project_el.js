@@ -3,7 +3,7 @@ import { Portfolio } from "./portfolio.js"
 import { apendNewProject } from "./project_dropdown_creation.js"
 import { swithTasksForProject } from "./task_list_display.js"
 import { addTaskEventListeners } from "./add_task_el.js"
-
+import {showProjectDetails} from "./project-stat-aside.js"
 function newProjectELSetup(portfolio) {
   
   let new_project_form_dialog, btn_new_project, btn_project_sumbmit;
@@ -44,7 +44,7 @@ function newProjetDataCapture(portfolio){
 
 function addProjectEventListeners(portfolio, setup = true){
   
-  let new_project_btn;
+  let new_project_btn, n =  0;
 
   if(setup){
     newProjectELSetup(portfolio);
@@ -52,7 +52,9 @@ function addProjectEventListeners(portfolio, setup = true){
   new_project_btn = document.querySelector(".existing-projects").lastChild;
   new_project_btn.addEventListener('click', (ev)=>{
     if( (portfolio.getCurrentProject()).getName() == new_project_btn.innerHTML){
-      alert(`Already on ${new_project_btn.innerHTML}`);
+      // alert(`Already on ${new_project_btn.innerHTML}`);
+      showProjectDetails(`${Math.pow((-1),n)}`);
+      n++;
       } else {
       let target_project = portfolio.getProjectByName(new_project_btn.innerHTML);
       portfolio.setCurrentProject(target_project);
