@@ -38,4 +38,3 @@ function swithTasksForProject(portfolio){
 }
 
 export {createTaskListDOM, swithTasksForProject}
-

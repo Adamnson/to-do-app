@@ -4,6 +4,7 @@ import { apendNewProject } from "./project_dropdown_creation.js"
 import { swithTasksForProject } from "./task_list_display.js"
 import { addTaskEventListeners } from "./add_task_el.js"
 import {showProjectDetails} from "./project-stat-aside.js"
+
 function newProjectELSetup(portfolio) {
   
   let new_project_form_dialog, btn_new_project, btn_project_sumbmit;
@@ -71,8 +72,6 @@ function switchProjectNameDisplay(ev){
   existing_projects = document.querySelector(".existing-projects");
   existing_projects.removeChild(current_project_button);
   existing_projects.insertBefore(current_project_button, existing_projects.firstChild);
-
 }
 
 export {addProjectEventListeners}
-

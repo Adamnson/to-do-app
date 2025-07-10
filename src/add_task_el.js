@@ -4,7 +4,6 @@ import {Project} from "./project.js"
 import {updateTaskCountInAside} from "./project-stat-aside.js"
 
 function addTaskEventListeners(portfolio){
-
   
   let new_task_form_dialog, new_project_form_dialog, btn_new_taks, btn_task_submit;
 
@@ -26,7 +25,7 @@ function addTaskEventListeners(portfolio){
     if(e.code == 'Escape'){
       closeFromAndReset()
     }
-})
+  })
 
   btn_task_submit.addEventListener('click', () => {
     newTaskDataCapture(portfolio.getCurrentProject())

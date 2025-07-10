@@ -31,21 +31,21 @@ function projectStatAside(){
 function updateTaskCountInAside(project){
 
   (document.querySelector("#total-count")).innerHTML = `Total number of Tasks: ${project.numberOfTasks()}`;
-   let prio_list = ["high", "medium", "low"];
-    for(let i =0; i < prio_list.length; i++)
-    {
-      let prio_task_count, target_div;
+  let prio_list = ["high", "medium", "low"];
+  for(let i =0; i < prio_list.length; i++)
+  {
+    let prio_task_count, target_div;
+
+    prio_task_count = Array.from(document.querySelectorAll(`.${prio_list[i]}-prio-task`)).length;
+    target_div = document.querySelector(`#${prio_list[i]}-count`);
       
-      prio_task_count = Array.from(document.querySelectorAll(`.${prio_list[i]}-prio-task`)).length;
-      target_div = document.querySelector(`#${prio_list[i]}-count`);
-      
-      if (prio_task_count ){
-        target_div.innerHTML = `\n${(prio_list[i]).capitalize()}: ${prio_task_count}`
-      }
-      else{
-        target_div.innerHTML = "";
-      }
+    if (prio_task_count ){
+      target_div.innerHTML = `\n${(prio_list[i]).capitalize()}: ${prio_task_count}`
     }
+    else{
+      target_div.innerHTML = "";
+    }
+  }
 }
 
 export {showProjectDetails, projectStatAside, updateTaskCountInAside}

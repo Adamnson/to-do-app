@@ -75,7 +75,7 @@
   border-left: 0.5rem solid rgb(9, 148, 9);
   box-shadow: inset 0.5rem 0.5rem rgb(9, 148, 9);
   &:hover{
-  box-shadow: 11px 5px 5px rgb(9, 148, 9);
+    box-shadow: 11px 5px 5px rgb(9, 148, 9);
   }
 }
 
@@ -83,7 +83,7 @@
   border-left: 0.5rem solid hsl(36, 83%, 50%);
   box-shadow: inset 0.5rem 0.5rem hsl(36, 83%, 50%);
   &:hover{
-  box-shadow: 11px 5px 5px hsl(36, 83%, 50%);
+    box-shadow: 11px 5px 5px hsl(36, 83%, 50%);
   }
 }
 
@@ -91,7 +91,7 @@
   border-left: 0.5rem solid hsl(0, 88%, 44%);
   box-shadow: inset 0.5rem 0.5rem hsl(0, 88%, 44%);
   &:hover{
-  box-shadow: 11px 5px 5px hsl(0, 88%, 44%);
+    box-shadow: 11px 5px 5px hsl(0, 88%, 44%);
   }
 }
 
@@ -108,6 +108,7 @@
 
 .task-body {
   padding-inline: 0.25rem;
+  margin-left: 0.75rem;
 }
 
 
@@ -140,8 +141,5 @@
   .task-list {
     display: grid;
     grid-template-columns: 1fr 1fr;
-  }
-  .task-body {
-    padding-inline: 0.75rem;
   }
 }
