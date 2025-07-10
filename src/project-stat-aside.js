@@ -1,3 +1,5 @@
+import "./project_aside_style.css"
+
 function showProjectDetails(n) {
    if (n==-1 ) {
     let aside = document.querySelector("aside");
@@ -23,8 +25,6 @@ function projectStatAside(){
   })
 
   aside.style.visibility = "hidden";
-  console.log(aside);
-
   return aside;
 }
 

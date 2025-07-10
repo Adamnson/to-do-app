@@ -52,7 +52,6 @@ function addProjectEventListeners(portfolio, setup = true){
   new_project_btn = document.querySelector(".existing-projects").lastChild;
   new_project_btn.addEventListener('click', (ev)=>{
     if( (portfolio.getCurrentProject()).getName() == new_project_btn.innerHTML){
-      // alert(`Already on ${new_project_btn.innerHTML}`);
       showProjectDetails(`${Math.pow((-1),n)}`);
       n++;
       } else {

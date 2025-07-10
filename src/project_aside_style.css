@@ -1,0 +1,41 @@
+
+aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;  
+  border: 5px solid white;
+  height: 10rem;
+  left: 0;
+  width: max(15vw, 5rem);
+  position: absolute;
+  top: 25vh;
+  height: 74vh;
+  border-radius: 0 2rem ;
+  padding-left: 1.5rem;
+}
+
+aside > div {
+  font-size: 2rem;
+}
+
+#low-count{
+  color: rgb(9, 148, 9);
+}
+#medium-count{
+  color: hsl(36, 83%, 50%);
+}
+#high-count{
+  color: hsl(0, 88%, 44%);
+}
+
+@media  (max-width: 600px) {
+  aside {
+  align-items: center;
+  position: relative;
+  top: 30%;
+  left: 25%;
+  width: 50%;
+  border: 5px solid red;  
+  height: 10rem;
+  }
+}

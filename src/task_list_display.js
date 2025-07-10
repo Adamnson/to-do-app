@@ -26,7 +26,6 @@ function swithTasksForProject(portfolio){
   let  task_list_div, new_task_btn, updated_task_list_div, current_project;
 
   current_project = portfolio.getCurrentProject();
-  console.log(`supposedly switched ${current_project.getName()}`)
   task_list_div = document.querySelector(".task-list")
   new_task_btn = document.querySelector("#btn-new-task");
   task_list_div.innerHTML = ""
