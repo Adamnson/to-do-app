@@ -1,7 +1,7 @@
 nav {
   width: 100%;
   min-width: 16rem;
-  background-color: aqua;
+  background-color: #530ce2;
   display: flex;
   justify-content: space-between;
 }
