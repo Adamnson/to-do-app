@@ -4,6 +4,7 @@ import { Project } from "./project.js"
 import { Task } from "./task.js"
 import { createTaskListDOM } from "./task_list_display.js"
 import { addProjectEventListeners } from "./add_project_el.js"
+import "./style.css"
 
 let portfolio, p1, item1, job, tl, date, landing_page;
 

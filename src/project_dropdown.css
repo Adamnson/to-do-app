@@ -52,11 +52,6 @@
   background-color: whitesmoke;
 }
 
-body>aside[style="visibility: visible"] + .project {
-  clip-path: rect(5rem 7rem 5rem 7rem round 15% );
-  background-color: yellow;
-}
-
 .existing-projects > *:not(:last-child){
   margin-bottom: 0.1rem;
 }
@@ -67,8 +62,11 @@ body>aside[style="visibility: visible"] + .project {
   clip-path: polygon(60% 0, 60% 40%, 100% 40%, 100% 60%, 60% 60%, 60% 100%, 40% 100%,
   40% 60%, 0 60%, 0 40%, 40% 40%, 40% 0);
   transition: clip-path 1s ease-in-out 1.5s;
+  border-radius: 50%;
+  border: none;
   &:hover {
     font-size: 1rem;
     clip-path: circle(7rem);
+    border-radius: 1rem;
   }
 }
