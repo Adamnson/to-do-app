@@ -16,6 +16,17 @@ aside {
 
 aside > div {
   font-size: 2rem;
+  background-color: rgb(3,4,3,0.4);
+  padding-left: 3rem;
+  margin-right: 1rem;
+  border-radius: 50% 0 0 50%;
+  width: 100%;
+  min-height: 1.5rem;
+  position: relative;
+  left: -3rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 #low-count{
@@ -43,5 +54,11 @@ aside > div {
   width: 50%;
   border: 5px solid red;  
   height: 10rem;
+  }
+  aside > div {
+    justify-content: center;
+    padding-left: 0;
+    left: 0;
+    border-radius: 1rem;
   }
 }

@@ -76,7 +76,7 @@
   border-left: 0.5rem solid rgb(9, 148, 9);
   box-shadow: inset -0.5rem 0.01rem rgb(9, 148, 9);
   &:hover{
-    box-shadow: 11px 5px 5px rgb(9, 148, 9);
+    box-shadow: 11px 10px 15px rgb(9, 148, 9);
   }
 }
 
@@ -85,7 +85,7 @@
   box-shadow: inset -0.5rem 0.01rem hsl(36, 83%, 50%);
   transition: box-shadow 1s ease-in-out, border 1s ease-in-out;
   &:hover{
-    box-shadow: 11px 5px 5px hsl(36, 83%, 50%);
+    box-shadow: 11px 15px 20px hsl(36, 83%, 50%);
   }
 }
 
@@ -93,7 +93,7 @@
   border-left: 0.5rem solid hsl(0, 88%, 44%);
   box-shadow: inset -0.5rem 0.01rem hsl(0, 88%, 44%);
   &:hover{
-    box-shadow: 11px 5px 5px hsl(0, 88%, 44%);
+    box-shadow: 11px 20px 30px hsl(0, 88%, 44%);
   }
 }
 
@@ -142,6 +142,13 @@
   .task-list {
     display: grid;
     grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1500px) {
+  .task-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
 
