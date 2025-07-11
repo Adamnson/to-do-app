@@ -4,6 +4,7 @@ nav {
   background-color: #530ce2;
   display: flex;
   justify-content: space-between;
+  border-radius: 2rem;
 }
 
 nav > * {

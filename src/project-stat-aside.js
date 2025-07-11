@@ -41,9 +41,11 @@ function updateTaskCountInAside(project){
       
     if (prio_task_count ){
       target_div.innerHTML = `\n${(prio_list[i]).capitalize()}: ${prio_task_count}`
+      target_div.style.visibility = ""
     }
     else{
       target_div.innerHTML = "";
+      target_div.style.visibility = "hidden"
     }
   }
 }

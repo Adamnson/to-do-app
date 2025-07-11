@@ -3,7 +3,7 @@
   align-items: center;
   align-self: center;
   margin-block: 0.5rem;
-  border: 3px solid black;
+  /* border: 3px solid black; */
   border-radius: 0.25rem;
   transition: height 1s;
   min-width: 100%;
@@ -30,6 +30,11 @@
 .existing-projects > *:not(:first-child)  {
   visibility: hidden;
   transition:  visibility 1s;
+  
+}
+
+.existing-projects > :first-child {
+  border-radius: 2rem 5rem 5rem 2rem;
 }
 
 .dropdown:hover > *:not(:first-child),
@@ -48,8 +53,13 @@
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
-  border-radius: 0 5rem 5rem 0;
+  min-width: 7rem;
+  border-radius: 1rem 5rem 5rem 1rem;
   background-color: whitesmoke;
+  overflow: hidden;
+   text-overflow: ellipsis;
+   -webkit-box-orient: vertical;
+
 }
 
 .existing-projects > *:not(:last-child){
